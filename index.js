@@ -90,7 +90,7 @@ Verifier.prototype.verify = function (finalUrl) {
         let obj = {
           "error": {
             "code": res.statusCode,
-            "message": res.body.error.message?res.body.error.message:"Invalid response, please check 'Verifier' configuration or the statusCode above"
+            "message": (res.body && res.body.error && res.body.error.message)?res.body.error.message:"Invalid response, please check 'Verifier' configuration or the statusCode above"
           }
         };
         if (res.statusCode === 204) {
